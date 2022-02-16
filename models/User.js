@@ -1,7 +1,7 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require("mongoose");
 
 const userSchema = Schema({
-    googleId: String
-})
+  googleId: String,
+});
 
-model('users', userSchema)
+model("users", userSchema);
