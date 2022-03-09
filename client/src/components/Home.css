@@ -1,0 +1,47 @@
+.form-control-lg {
+  background: none;
+  color: white;
+  user-select: none;
+  border-radius: 27px;
+  border: 2px solid teal;
+  font-weight: 500;
+}
+
+.form-control-lg:focus {
+  color: white;
+  user-select: none;
+  outline-color: teal;
+  outline-width: 5px;
+  animation: ani .2s ease-in-out;
+
+  border: 2px solid transparent;
+  outline-style: solid;
+}
+.form-control-lg::selection {
+  color: white;
+  background-color: teal;
+}
+
+.btn{
+    border-radius: 25px;
+    border-width: 0px;
+}
+
+
+.btn:active {
+  user-select: none;
+  outline-color: teal;
+  outline-width: 5px;
+  border: 0px solid transparent;
+  outline-style: solid;
+}
+
+
+@keyframes ani {
+  0% {
+    outline-width: 0px; 
+  }
+  100%{
+    outline-width: 5px;
+  }
+}
