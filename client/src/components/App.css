@@ -87,7 +87,3 @@ img::selection {
   user-select: none;
 }
 
-.form-control input[type="text"] {
-    background: teal;
-    color: white;
-}

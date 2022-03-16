@@ -17,7 +17,7 @@ class Header extends Component {
             <a className="nav-link" href="#">
               Contact
             </a>
-            {true ? (
+            {this.props.currentUser ? (
               <div className="nav-link dropdown text-end">
                 <a
                   href="#"
