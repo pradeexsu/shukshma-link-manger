@@ -1,34 +1,46 @@
 import React, { Component } from "react";
-import { BrowserRouter, Link, Route, Router, Routes } from "react-router-dom";
-import {CURRENT_USER} from "./constants"
 import "./App.css";
 import Header from "./Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle";
 import Footer from "./Footer";
 import Home from "./Home";
+import { BrowserRouter, Route } from "react-router-dom";
+import { connect } from "react-redux";
+import * as actions from "../actions";
+
+
+
+const AboutUs = () => (
+  <>
+    <h1>this is about</h1>
+  </>
+)
 
 class App extends Component {
-  state = {
-    currentUser: {}
-  }
-  componentDidMount(){
-    const currentUser = JSON.parse(localStorage.getItem(CURRENT_USER))
-    this.setState({currentUser})    
+  componentDidMount() {
+    this.props.fetchUser();
   }
   render() {
     return (
-      <div className="outter d-flex text-center text-white bg-dark">
-        <div className="cover-container d-flex w-100 p-3 mx-auto flex-column">
-          <Header currentUser={this.state.currentUser}/>
+      <BrowserRouter>
 
-          <Home/>
+        <div className="outter d-flex text-center text-white bg-dark">
+          <div className="cover-container d-flex w-100 p-3 mx-auto flex-column">
+            <Header />
+            <div>
+              <Route path="/" exact component={Home} />
+              <Route path="/about" component={AboutUs} />
 
-          <Footer />
+            </div>
+            <Footer />
+
+          </div>
         </div>
-      </div>
+      </BrowserRouter>
+
     );
   }
 }
 
-export default App;
+export default connect(null, actions)(App);

@@ -33,10 +33,11 @@ passport.use(
         return done(null, existingUser);
       }
       console.log("welcome new user");
-      const user = await new User({ googleId: profile.id }).save();
+      const user = await new User({
+        googleId: profile.id,
+        ...profile._json        
+      }).save();
       return done(null, user);
     }
   )
 );
-
-
