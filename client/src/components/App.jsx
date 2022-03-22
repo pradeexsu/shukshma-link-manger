@@ -19,6 +19,9 @@ const AboutUs = () => (
 )
 
 class App extends Component {
+  state = {
+    email: ''
+  }
   componentDidMount() {
     this.props.fetchUser();
   }
