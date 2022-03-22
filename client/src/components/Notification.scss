@@ -1,0 +1,123 @@
+$color-success: #28a745;
+$color-danger:  #dc3545;
+$color-warning: #ffc107;
+$color-info:    #17a2b8;
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1c1c1c;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  transition: all 0.2s;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn-success {
+  color: darken($color-success, 30%);
+  border-color: darken($color-success, 10%);
+  background-color: $color-success;
+  &:hover {
+    background-color: darken($color-success, 10%);
+    color: white;
+  }
+}
+
+.btn-danger {
+  color: darken($color-danger, 30%);
+  border-color: darken($color-danger, 10%);
+  background-color: $color-danger;
+  &:hover {
+    background-color: darken($color-danger, 10%);
+    color: white;
+  }
+}
+
+.btn-warning {
+  color: darken($color-warning, 30%);
+  border-color: darken($color-warning, 10%);
+  background-color: $color-warning;
+  &:hover {
+    background-color: darken($color-warning, 10%);
+    color: white;
+  }
+}
+
+.btn-info {
+  color: darken($color-info, 30%);
+  border-color: darken($color-info, 10%);
+  background-color: $color-info;
+  &:hover {
+    background-color: darken($color-info, 10%);
+    color: white;
+  }
+}
+
+/* message */
+.msg {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.05);
+}
+
+.msg-success {
+  background-color: $color-success;
+}
+
+.msg-warning {
+  color: darken($color-warning, 30%);
+  background-color: $color-warning;
+}
+
+.msg-danger {
+  background-color: $color-danger;
+}
+
+.msg-info {
+  background-color: $color-info;
+}
+
+/*fade*/
+.animate {
+  opacity: 0;
+  transition: all 1s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animate.active {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.slide-in-down {
+  transform: translateY(-100%) translateX(-50%);
+}

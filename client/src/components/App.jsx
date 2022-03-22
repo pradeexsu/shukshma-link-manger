@@ -8,6 +8,7 @@ import Home from "./Home";
 import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../actions";
+import Dashboard from "./Dashboard";
 
 
 
@@ -31,6 +32,7 @@ class App extends Component {
             <div>
               <Route path="/" exact component={Home} />
               <Route path="/about" component={AboutUs} />
+              <Route path="/dashboard" component={Dashboard} />
 
             </div>
             <Footer />
