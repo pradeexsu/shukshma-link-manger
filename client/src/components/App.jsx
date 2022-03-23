@@ -11,13 +11,6 @@ import * as actions from "../actions";
 import Dashboard from "./Dashboard";
 
 
-
-const AboutUs = () => (
-  <>
-    <h1>this is about</h1>
-  </>
-)
-
 class App extends Component {
   state = {
     email: ''
@@ -34,7 +27,6 @@ class App extends Component {
             <Header />
             <div>
               <Route path="/" exact component={Home} />
-              <Route path="/about" component={AboutUs} />
               <Route path="/dashboard" component={Dashboard} />
 
             </div>
