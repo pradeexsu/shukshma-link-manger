@@ -73,7 +73,7 @@ class Home extends Component {
             this.setState({ loading: false })
             return
         }
-        const url = 'http://localhost:5000/';
+        const url = '/';
 
         this.postLink(url)
 
@@ -106,7 +106,7 @@ class Home extends Component {
         }).then((response) => {
             const data = response.data
             const key = data._doc ? data._doc.key : '';
-            const url = `localhost:5000/${key}`
+            const url = `${window.location.host}/${key}`
             this.setState({
                 'shareLink': key ? (<ShareLink url={url} _key={`/${key}`} />) : null,
                 loading: false,

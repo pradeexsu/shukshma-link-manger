@@ -10,7 +10,6 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 import Dashboard from "./Dashboard";
 
-
 class App extends Component {
   state = {
     email: ''
@@ -22,7 +21,7 @@ class App extends Component {
     return (
       <BrowserRouter>
 
-        <div className="outter d-flex text-center text-white bg-dark">
+        <div className="outter d-flex text-center text-white bg-dark" >
           <div className="cover-container d-flex w-100 p-3 mx-auto flex-column">
             <Header />
             <div>

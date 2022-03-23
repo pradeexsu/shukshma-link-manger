@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const helmet = require("helmet");
 const cors = require("cors");
+const path = require("path");
 const { nanoid } = require("nanoid");
 require("dotenv").config();
 require("./models/User");
@@ -50,6 +51,12 @@ mongoose.connection
   .on("error", (error) => {
     console.log("something went wrong");
   });
+
+app.use(express.static(path.join(__dirname, "client/build")));
+
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "client/build", "index.html"));
+});
 
 app.post("/all", async (req, res) => {
   try {

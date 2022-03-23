@@ -14,7 +14,7 @@ class Dashboard extends Component {
 
     init = () => {
 
-        axios.post("http://localhost:5000/all", { "email": localStorage.email })
+        axios.post("/all", { "email": localStorage.email })
             .then((res) => {
                 console.log('local storage: ', localStorage.email);
                 this.setState({ list: res.data.links })
@@ -22,13 +22,13 @@ class Dashboard extends Component {
             })
     }
     deleteItem = (key) => {
-        axios.delete(`http://localhost:5000/${key}`).then((res) => {
+        axios.delete(`/${key}`).then((res) => {
             this.init()
         })
 
     }
     renderItem(item) {
-        const url = `http://localhost:5000/${item.key}`
+        const url = `${window.location.host}/${item.key}`
         return (
             <li key={item.key} className="list-group-item d-flex justify-content-between align-items-start">
                 <div className="ms-2 me-auto">
