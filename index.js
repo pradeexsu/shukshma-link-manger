@@ -4,6 +4,10 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const cors = require("cors");
 const path = require("path");
+const fs = require("fs");
+const http = require("http");
+const https = require("https");
+
 const { nanoid } = require("nanoid");
 require("dotenv").config();
 require("./models/User");
@@ -15,7 +19,6 @@ const passport = require("passport");
 
 const app = express();
 app.use(morgan("dev"));
-
 
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 
@@ -157,8 +160,42 @@ app.get("/:key", async (req, res) => {
   }
 });
 
-const port = process.env.PORT || 3000;
+if (process.env.NODE_ENV === "prod") {
+  const privateKey = fs.readFileSync(
+    "/etc/letsencrypt/live/sku.rest/privkey.pem",
+    "utf8"
+  );
+  const certificate = fs.readFileSync(
+    "/etc/letsencrypt/live/sku.rest/cert.pem",
+    "utf8"
+  );
+  const ca = fs.readFileSync(
+    "/etc/letsencrypt/live/sku.rest/chain.pem",
+    "utf8"
+  );
+  const credentials = {
+    key: privateKey,
+    cert: certificate,
+    ca: ca,
+  };
 
-app.listen(port, () => {
-  console.log(`server starting at port ${port}`);
-});
+  https.createServer(credentials, app).listen(443, () => {
+    console.log("HTTPS Server running on port 443");
+  });
+  http
+    .createServer(function (req, res) {
+      res.writeHead(301, {
+        Location: "https://" + req.headers["host"] + req.url,
+      });
+      res.end();
+    })
+    .listen(80);
+} else if (process.env.NODE_ENV === "dev") {
+  app.listen(5000, () => {
+    console.log(`server starting at port ${5000}`);
+  });
+} else {
+  app.listen(5000, () => {
+    console.log(`server starting at port ${5000}`);
+  });
+}
