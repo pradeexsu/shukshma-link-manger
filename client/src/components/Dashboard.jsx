@@ -35,7 +35,7 @@ class Dashboard extends Component {
                     <div className="fw-bold">{item.key}</div>
                     <span className="font-weight-light font-italic">{item.updatedAt}</span>
                 </div>
-                <a className="font-italic font-weight-light" href={url} target="_blank">{url}</a>
+                <a className="font-italic font-weight-light" href={`https://${url}`} target="_blank">{url}</a>
                 &nbsp;&nbsp;&nbsp;
                 <img onClick={() => this.deleteItem(item.key)} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAAtElEQVRIie2VQQ6CQAxFX8R7uPM4xsPgCTmFSzW6niUGBTezMnawLTIQecks+1+bzgD8G4Wjdg9sgeNAvXzNHah/Fb6L4Z3y1LFWTWWQSaf6JFhZulLSjeCYOQH/foMUntrx2d87p1xiMWOS4ssAYjFjkhNnE4s3UoEpowAa7G+4AdZSeGriJ3CzdBy5Ag+LGHx7TtYu4nc8H5FkbbaJ+9gALfqn1MZaFwd0/+YAlF7pwvx5Abo6e/T2cOSLAAAAAElFTkSuQmCC" />
                 &nbsp;&nbsp;&nbsp;
