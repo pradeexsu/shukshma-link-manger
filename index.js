@@ -15,7 +15,10 @@ const passport = require("passport");
 
 const app = express();
 app.use(morgan("dev"));
-app.use(helmet());
+
+
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+
 app.use(cors());
 app.use(express.json());
 

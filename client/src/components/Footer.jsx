@@ -25,7 +25,7 @@ const Footer = (props) => {
                 <li class="nav-item"><img height="35" src="./node.png" /></li>
                 <li class="nav-item"><img height="35" src="./react.png" /></li>
                 <li class="nav-item"><img height="35" src="./redux.png" /></li>
-                <li class="nav-item"><img height="35" src="./bootstrap.png" /></li>
+                {/* <li class="nav-item"><img height="35" src="./bootstrap.png" /></li> */}
                 <li class="nav-item"><img height="35" src="./deocean.png" /></li>
             </ul>
         </footer>

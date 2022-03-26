@@ -2,18 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAACJ0lEQVQ4jY2Vz2sTQRTHP2/ckdZCvGmtaM8NQsGKTZBS8GQhoB7Em0UqxZN4tanLUIx/hB7qQQQvKoJ48KS1JqC0EbynVagRb6GxrasdDzspk+1u8At72Pfjs+8x894K2RKMGQMKwKCzNVGqShiuADY9KSljAkRmsHYOOJnxsXVEKli7iDF/soHGDAHPgbM9KvdVAy5jTHM/MIZVe1SVpXW0LlIufwdQDha4yrJgq4iUgMPAUWAa+OZ8w0TRM8dwQJEZstt8Sy53jr6+d8AFRMaBJ2g97kELiFzvAAVr7/Roqc7mZp6trc/AU6x9Cbwhin4icncvKj5EEYw5A3zsAUyXSIkg+EQUNT3rmCK+Z0m1E+8WqAAvPNshlPqdiCso4FjC+AU4Ajz2YDcxZt75ABpY+5qdnYlE7pBKaWWe/v4DwKSzVDDmAcbMAmUAlLpCLvcXWEimB4hsYL0p0vo929sl4ISznMKYe8AcnXu7u3uNVmsUGE3wNgJEal1Aaw8Cv7ygS+7xdWtfZ3HlVeUGfW3PGEVTWPsKWPJCvwIPyVgITg3CsK4Ai8h9z7FAvF3OAxeBqwwM5IHbQCsTJ1IBbHwo1i4SDzrAcaCGyDSwgtZLtNtTQJ149NK0zMjII+heDoMOOtyjrTStoXWBcvkHdGY5BjbRuuhV+j9a9mHdQMCtoAlEZvEPar8aiNwgn5/0YZC2sX0ZcxqRItbGvwCRJiIfCMPVrJR/J8yjkw5F1XcAAAAASUVORK5CYII=" />
-
+    <link
+      rel="icon"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAACJ0lEQVQ4jY2Vz2sTQRTHP2/ckdZCvGmtaM8NQsGKTZBS8GQhoB7Em0UqxZN4tanLUIx/hB7qQQQvKoJ48KS1JqC0EbynVagRb6GxrasdDzspk+1u8At72Pfjs+8x894K2RKMGQMKwKCzNVGqShiuADY9KSljAkRmsHYOOJnxsXVEKli7iDF/soHGDAHPgbM9KvdVAy5jTHM/MIZVe1SVpXW0LlIufwdQDha4yrJgq4iUgMPAUWAa+OZ8w0TRM8dwQJEZstt8Sy53jr6+d8AFRMaBJ2g97kELiFzvAAVr7/Roqc7mZp6trc/AU6x9Cbwhin4icncvKj5EEYw5A3zsAUyXSIkg+EQUNT3rmCK+Z0m1E+8WqAAvPNshlPqdiCso4FjC+AU4Ajz2YDcxZt75ABpY+5qdnYlE7pBKaWWe/v4DwKSzVDDmAcbMAmUAlLpCLvcXWEimB4hsYL0p0vo929sl4ISznMKYe8AcnXu7u3uNVmsUGE3wNgJEal1Aaw8Cv7ygS+7xdWtfZ3HlVeUGfW3PGEVTWPsKWPJCvwIPyVgITg3CsK4Ai8h9z7FAvF3OAxeBqwwM5IHbQCsTJ1IBbHwo1i4SDzrAcaCGyDSwgtZLtNtTQJ149NK0zMjII+heDoMOOtyjrTStoXWBcvkHdGY5BjbRuuhV+j9a9mHdQMCtoAlEZvEPar8aiNwgn5/0YZC2sX0ZcxqRItbGvwCRJiIfCMPVrJR/J8yjkw5F1XcAAAAASUVORK5CYII="
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src *;
+    img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+    style-src  'self' 'unsafe-inline' *"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAACJ0lEQVQ4jY2Vz2sTQRTHP2/ckdZCvGmtaM8NQsGKTZBS8GQhoB7Em0UqxZN4tanLUIx/hB7qQQQvKoJ48KS1JqC0EbynVagRb6GxrasdDzspk+1u8At72Pfjs+8x894K2RKMGQMKwKCzNVGqShiuADY9KSljAkRmsHYOOJnxsXVEKli7iDF/soHGDAHPgbM9KvdVAy5jTHM/MIZVe1SVpXW0LlIufwdQDha4yrJgq4iUgMPAUWAa+OZ8w0TRM8dwQJEZstt8Sy53jr6+d8AFRMaBJ2g97kELiFzvAAVr7/Roqc7mZp6trc/AU6x9Cbwhin4icncvKj5EEYw5A3zsAUyXSIkg+EQUNT3rmCK+Z0m1E+8WqAAvPNshlPqdiCso4FjC+AU4Ajz2YDcxZt75ABpY+5qdnYlE7pBKaWWe/v4DwKSzVDDmAcbMAmUAlLpCLvcXWEimB4hsYL0p0vo929sl4ISznMKYe8AcnXu7u3uNVmsUGE3wNgJEal1Aaw8Cv7ygS+7xdWtfZ3HlVeUGfW3PGEVTWPsKWPJCvwIPyVgITg3CsK4Ai8h9z7FAvF3OAxeBqwwM5IHbQCsTJ1IBbHwo1i4SDzrAcaCGyDSwgtZLtNtTQJ149NK0zMjII+heDoMOOtyjrTStoXWBcvkHdGY5BjbRuuhV+j9a9mHdQMCtoAlEZvEPar8aiNwgn5/0YZC2sX0ZcxqRItbGvwCRJiIfCMPVrJR/J8yjkw5F1XcAAAAASUVORK5CYII=" />
 
-    <title>React App</title>
+    <title>Link Manager</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
