@@ -1,6 +1,8 @@
 # shukshma-link-manger
 link shortner and link manager
 
+[![Node.js CI](https://github.com/sutharp777/shukshma-link-manger/actions/workflows/node.js.yml/badge.svg)](https://github.com/sutharp777/shukshma-link-manger/actions/workflows/node.js.yml)
+
 ![Screenshot 2022-03-28 at 11 43 01 PM](https://user-images.githubusercontent.com/49487927/160463264-02accaa8-af57-41ed-bf6d-578ece9805b7.jpg)
 
 
