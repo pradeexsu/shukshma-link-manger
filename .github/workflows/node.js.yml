@@ -27,9 +27,13 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: installing node module server
-      run: npm i
+      run: |
+        npm i
+        rm -rf package-lock.json
+
     - name: react build
       run: |
           cd client
+          rm -rf package-lock.json
           npm i
           npm run build
